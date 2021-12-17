@@ -1,0 +1,14 @@
+# Disable the "core" nginx plugins
+disablePlugins:
+  - lando-nginx
+
+# Make sure we are dogfooding this plugin for testing purposes
+plugins:
+  "@lando/nginx": /home/runner/work/nginx/nginx
+
+# Disable metrics reporting
+stats:
+  - report: false
+    url: https://metrics.lando.dev
+
+

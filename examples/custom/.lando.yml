@@ -1,0 +1,23 @@
+name: lando-nginx-custom
+services:
+  custom:
+    type: nginx:1.17
+    ssl: true
+    webroot: www
+    config:
+      server: config/server2.conf
+      vhosts: config/custom.conf
+      params: config/params
+  custom_legacy:
+    type: nginx:1.14
+    ssl: true
+    webroot: www
+    config:
+      server: config/server.conf
+      vhosts: config/custom.conf
+      params: config/params
+
+# This is important because it lets lando know to test against the plugin in this repo
+# DO NOT REMOVE THIS!
+plugins:
+  "@lando/nginx": ./../../
