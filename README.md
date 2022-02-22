@@ -1,65 +1,37 @@
-# Lando NGINX Plugin
+# NGINX Lando Plugin
 
-The lando NGINX plugin service.
+This is the _official_ [Lando](https://lando.dev) plugin for [NGINX](https://www.nginx.com/resources/wiki/). When installed it...
 
-## Installation
+* Allows users to run various `nginx` versions
 
-```bash
-# With npm
-npm install @lando/nginx
+Of course, once a user is running their NGINX project with Lando they can take advantage of [all the other awesome development features](https://docs.lando.dev) Lando provides.
 
-# With yarn
-yarn add @lando/nginx
+## Basic Usage
+
+Add a `nginx` service to your Landofile
+
+```yaml
+services:
+  myservice:
+    type: nginx
 ```
+
+For more info you should check out the [docs](https://docs.lando.dev/nginx):
+
+* [Getting Started](https://docs.lando.dev/nginx/)
+* [Configuration](https://docs.lando.dev/nginx/config.html)
+* [Examples](https://github.com/lando/nginx/tree/main/examples)
+* [Development](https://docs.lando.dev/nginx/development.html)
 
 ## Issues, Questions and Support
 
-If you have a question or would like some community support we recommend you [join us on Slack](https://launchpass.com/devwithlando). Note that this is the Slack community for [Lando](https://lando.dev) but we are more than happy to help with this module as well!
+If you have a question or would like some community support we recommend you [join us on Slack](https://launchpass.com/devwithlando).
 
 If you'd like to report a bug or submit a feature request then please [use the issue queue](https://github.com/lando/nginx/issues/new/choose) in this repo.
 
 ## Changelog
 
 We try to log all changes big and small in both [THE CHANGELOG](https://github.com/lando/nginx/blob/main/CHANGELOG.md) and the [release notes](https://github.com/lando/nginx/releases).
-
-
-## Development
-
-* Requires [Node 14+](https://nodejs.org/dist/latest-v14.x/)
-* Prefers [Yarn](https://classic.yarnpkg.com/lang/en/docs/install)
-
-```bash
-git clone https://github.com/lando/nginx.git && cd nginx
-yarn install
-```
-
-If you dont' want to install Node 14 or Yarn for whatever reason you can install [Lando](https://docs.lando.dev/basics/installation.html) and use that:
-
-```bash
-git clone https://github.com/lando/nginx.git && cd nginx
-# Install deps and get node
-lando start
-
-# Run commands
-lando node
-lando yarn
-```
-
-## Testing
-
-```bash
-# Lint the code
-yarn lint
-
-# Run unit tests
-yarn test
-```
-
-## Releasing
-
-```bash
-yarn release
-```
 
 ## Contributors
 
@@ -69,6 +41,7 @@ yarn release
 
 Made with [contributors-img](https://contrib.rocks).
 
-## Other Resources
+## Other Selected Resources
 
-* [Important advice](https://www.youtube.com/watch?v=WA4iX5D9Z64)
+* [LICENSE](https://github.com/lando/nginx/blob/main/LICENSE.md)
+* [The best professional advice ever](https://www.youtube.com/watch?v=tkBVDh7my9Q)
