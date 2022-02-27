@@ -26,13 +26,13 @@ module.exports = {
     sidebar: [
       {
         text: 'Getting Started',
-        link: '/index.md',
+        link: '/index.html',
       },
-      '/config.md',
-      '/support.md',
+      '/config.html',
+      '/support.html',
       {text: 'Examples', link: 'https://github.com/lando/nginx/tree/main/examples'},
       {text: 'Release Notes', link: 'https://github.com/lando/nginx/releases'},
-      '/development.md',
+      '/development.html',
     ],
   },
 };
