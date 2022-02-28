@@ -1,6 +1,7 @@
 ---
 title: NGINX Lando Plugin
 description: Add a highly configurable nginx service to Lando for local development with all the power of Docker and Docker Compose. Learn how to change version, setup SSL, use a custom webroot or use custom Apache config.
+next: ./config.html
 ---
 
 # NGINX
