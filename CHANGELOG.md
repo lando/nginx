@@ -1,4 +1,4 @@
-## IN DEVELOPMENT
+## v0.6.0 - [September 7, 2022](https://github.com/lando/nginx/releases/tag/v0.6.0)
 
 ## v0.5.0 - [November 9, 2021](https://github.com/lando/nginx/releases/tag/v0.5.0)
 
