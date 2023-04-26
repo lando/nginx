@@ -22,7 +22,7 @@ Verification commands
 Run the following commands to validate things are rolling as they should.
 
 ```bash
-# Should use 1.18.x as the default version
+# Should use 1.19.x as the default version
 lando ssh -s defaults -c "nginx -v 2>&1 | grep 1.19"
 
 # Should serve from the app root by default
