@@ -14,9 +14,9 @@ At the very least you will need to have the following installed:
 * [Lando 3.5.0+](https://docs.lando.dev/basics/installation.html), preferably installed [from source](https://docs.lando.dev/basics/installation.html#from-source).
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-While not a hard requirement it's also probably a good idea to install both `node` 14 and `yarn`
+While not a hard requirement it's also probably a good idea to install both `node` 16 and `yarn`
 
-* [Node 14](https://nodejs.org/dist/latest-v14.x/)
+* [Node 16](https://nodejs.org/dist/latest-v16.x/)
 * [Yarn](https://classic.yarnpkg.com/lang/en/docs/install)
 
 ## Installation
