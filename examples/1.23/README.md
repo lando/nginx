@@ -22,11 +22,8 @@ Verification commands
 Run the following commands to validate things are rolling as they should.
 
 ```bash
-# Should use 1.17.x as the default version
-lando ssh -s defaults -c "nginx -v 2>&1 | grep 1.17"
-
-# Should use the user specified patch version if given
-lando ssh -s patch -c "nginx -v 2>&1 | grep 1.17.10"
+# Should use 1.23.x as the default version
+lando ssh -s defaults -c "nginx -v 2>&1 | grep 1.23"
 
 # Should serve from the app root by default
 lando ssh -s defaults -c "curl http://localhost | grep ROOTDIR"

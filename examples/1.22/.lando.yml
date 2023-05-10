@@ -1,9 +1,7 @@
-name: lando-nginx-117
+name: lando-nginx-122
 services:
   defaults:
-    type: nginx:1.17
-  patch:
-    type: nginx:1.17.10
+    type: nginx:1.22
 
 # This is important because it lets lando know to test against the plugin in this repo
 # DO NOT REMOVE THIS!

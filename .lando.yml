@@ -1,7 +1,7 @@
 name: lando-nginx-plugin
 services:
   node:
-    type: node:14
+    type: node:16
     build:
       - yarn install
     scanner: false

@@ -18,6 +18,12 @@ services:
 
 ## Supported versions
 
+*   [1.24](https://hub.docker.com/r/bitnami/nginx)
+*   [1.23](https://hub.docker.com/r/bitnami/nginx)
+*   [1.22](https://hub.docker.com/r/bitnami/nginx)
+*   [1.21](https://hub.docker.com/r/bitnami/nginx)
+*   [1.20](https://hub.docker.com/r/bitnami/nginx)
+*   [1.19](https://hub.docker.com/r/bitnami/nginx)
 *   [1.18](https://hub.docker.com/r/bitnami/nginx)
 *   **[1.17](https://hub.docker.com/r/bitnami/nginx)** **(default)**
 *   [1.16](https://hub.docker.com/r/bitnami/nginx)
@@ -60,7 +66,7 @@ mkdir -p ~/.lando/plugins
 # Install plugin
 # NOTE: Modify the "yarn add @lando/nginx" line to install a particular version eg
 # yarn add @lando/nginx@0.5.2
-docker run --rm -it -v ${HOME}/.lando/plugins:/plugins -w /tmp node:14-alpine sh -c \
+docker run --rm -it -v ${HOME}/.lando/plugins:/plugins -w /tmp node:16-alpine sh -c \
   "yarn init -y \
   && yarn add @lando/nginx --production --flat --no-default-rc --no-lockfile --link-duplicates \
   && yarn install --production --cwd /tmp/node_modules/@lando/nginx \
