@@ -20,6 +20,12 @@ jobs:
           - examples/1.16
           - examples/1.17
           - examples/1.18
+          - examples/1.19
+          - examples/1.20
+          - examples/1.21
+          - examples/1.22
+          - examples/1.23
+          - examples/1.24
           - examples/custom
 
     steps:
