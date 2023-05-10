@@ -48,11 +48,14 @@ module.exports = {
     constructor(id, options = {}) {
       options = _.merge({}, config, options);
 
+      // compute the minor version
+      const mv = _(options.version.split('.')).thru(versions => [versions[0], versions[1]].join('.')).value();
+
       // Use different default for ssl
       if (options.ssl) options.defaultFiles.vhosts = 'default-ssl.conf.tpl';
 
       // If we are using the older 1.14 version we need different locations
-      if (options.version === '1.14') {
+      if (mv === '1.14') {
         options.finalFiles = _.merge({}, options.finalFiles, {
           server: '/opt/bitnami/extra/nginx/templates/nginx.conf.tpl',
           vhosts: '/opt/bitnami/extra/nginx/templates/default.conf.tpl',
@@ -61,7 +64,6 @@ module.exports = {
       }
 
       // swap to older render template as needed
-      const mv = _(options.version.split('.')).thru(versions => [versions[0], versions[1]].join('.')).value();
       if (mv === '1.14' || mv === '1.15' || mv === '1.16') {
         options.renderTemplate = '1.0.3-3';
       }

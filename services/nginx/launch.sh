@@ -7,10 +7,10 @@ set -e
 : ${VHOST:="$1"}
 : ${SERVER:="$2"}
 : ${PARAMS:="$3"}
+: ${RENDER_TEMPLATE:="$4"}
 : ${VHOST_SOURCE:="/tmp/vhosts.conf.lando"}
 : ${SERVER_SOURCE:="/tmp/server.conf.lando"}
 : ${PARAMS_SOURCE:="/tmp/fastcgi_params.lando"}
-: ${RENDER_TEMPLATE:="1.0.5-5"}
 
 # Get the lando logger
 . /helpers/log.sh
