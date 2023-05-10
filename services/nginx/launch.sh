@@ -10,6 +10,7 @@ set -e
 : ${VHOST_SOURCE:="/tmp/vhosts.conf.lando"}
 : ${SERVER_SOURCE:="/tmp/server.conf.lando"}
 : ${PARAMS_SOURCE:="/tmp/fastcgi_params.lando"}
+: ${RENDER_TEMPLATE:="1.0.5-5"}
 
 # Get the lando logger
 . /helpers/log.sh
@@ -36,7 +37,7 @@ fi
 
 # Unpack components
 if [ -f "/opt/bitnami/scripts/libcomponent.sh" ] && ! command -v render-template &> /dev/null; then
-  . /opt/bitnami/scripts/libcomponent.sh && component_unpack "render-template" "1.0.5-5" || . /opt/bitnami/scripts/libcomponent.sh && component_unpack "render-template" "1.0.3-3"
+  . /opt/bitnami/scripts/libcomponent.sh && component_unpack "render-template" "$RENDER_TEMPLATE"
 fi
 
 # Render the template if render-template exists
