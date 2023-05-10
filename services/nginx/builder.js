@@ -64,6 +64,7 @@ module.exports = {
       // prevent unexpected edits to this files
       // See: https://github.com/lando/lando/issues/2383
       const {params, server, vhosts} = options.finalFiles;
+      console.log(options.finalFiles, options.defaultFiles);
 
       // Build the default stuff here
       const nginx = {
