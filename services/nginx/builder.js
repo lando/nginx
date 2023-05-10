@@ -65,7 +65,7 @@ module.exports = {
 
       // swap to older render template as needed
       if (mv === '1.14' || mv === '1.15' || mv === '1.16') {
-        options.renderTemplate = '1.0.3-3';
+        options.renderTemplate = '1.0.0-3';
       }
 
       // Get the config files final destination
