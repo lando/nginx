@@ -2,6 +2,8 @@ name: lando-nginx-120
 services:
   defaults:
     type: nginx:1.20
+    build_as_root:
+      - apt-get update && apt-get install -y curl
 
 # This is important because it lets lando know to test against the plugin in this repo
 # DO NOT REMOVE THIS!

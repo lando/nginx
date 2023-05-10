@@ -41,22 +41,31 @@ module.exports = {
     },
     ssl: false,
     webroot: '.',
+    renderTemplate: '1.0.5-5',
   },
   parent: '_webserver',
   builder: (parent, config) => class LandoNginx extends parent {
     constructor(id, options = {}) {
       options = _.merge({}, config, options);
 
+      // compute the minor version
+      const mv = _(options.version.split('.')).thru(versions => [versions[0], versions[1]].join('.')).value();
+
       // Use different default for ssl
       if (options.ssl) options.defaultFiles.vhosts = 'default-ssl.conf.tpl';
 
       // If we are using the older 1.14 version we need different locations
-      if (options.version === '1.14') {
+      if (mv === '1.14') {
         options.finalFiles = _.merge({}, options.finalFiles, {
           server: '/opt/bitnami/extra/nginx/templates/nginx.conf.tpl',
           vhosts: '/opt/bitnami/extra/nginx/templates/default.conf.tpl',
         });
         options.defaultFiles = _.merge({}, options.defaultFiles, {server: 'nginx.conf.tpl'});
+      }
+
+      // swap to older render template as needed
+      if (mv === '1.14' || mv === '1.15' || mv === '1.16') {
+        options.renderTemplate = '1.0.0-3';
       }
 
       // Get the config files final destination
@@ -68,7 +77,7 @@ module.exports = {
       // Build the default stuff here
       const nginx = {
         image: `bitnami/nginx:${options.version}`,
-        command: `/launch.sh ${vhosts} ${server} ${params}`,
+        command: `/launch.sh ${vhosts} ${server} ${params} ${options.renderTemplate}`,
         environment: {
           NGINX_HTTP_PORT_NUMBER: '80',
           NGINX_DAEMON_USER: 'root',
