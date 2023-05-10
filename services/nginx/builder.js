@@ -60,8 +60,9 @@ module.exports = {
         options.defaultFiles = _.merge({}, options.defaultFiles, {server: 'nginx.conf.tpl'});
       }
 
-      // swap to older render template
-      if (options.version === '1.14' || options.version === '1.15' || options.version === '1.16') {
+      // swap to older render template as needed
+      const mv = _(options.version.split('.')).thru(versions => [versions[0], versions[1]].join('.')).value();
+      if (mv === '1.14' || mv === '1.15' || mv === '1.16') {
         options.renderTemplate = '1.0.3-3';
       }
 
