@@ -2,6 +2,7 @@
 
 // Modules
 const _ = require('lodash');
+const path = require('path');
 
 // Builder
 module.exports = {
@@ -23,7 +24,7 @@ module.exports = {
       '1.14': 'bitnami/nginx:1.14.2-r125',
     },
     patchesSupported: true,
-    confSrc: __dirname,
+    confSrc: path.resolve(__dirname, '..', 'config'),
     defaultFiles: {
       params: 'fastcgi_params',
       server: 'nginx.conf',
