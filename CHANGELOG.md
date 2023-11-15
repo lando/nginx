@@ -1,7 +1,11 @@
+## v0.10.0 - [November 15, 2023](https://github.com/lando/nginx/releases/tag/v0.10.0)
+* Moved builder file to the new builders/ directory.
+* Isolated testing to fit with HARDCORE strategy.
+
 ## v0.9.0 - [July 3, 2023](https://github.com/lando/nginx/releases/tag/v0.9.0)
-  * Removed bundle-dependencies and version-bump-prompt from plugin.
-  * Updated package to use prepare-release-action.
-  * Updated documentation to reflect new release process.
+* Removed bundle-dependencies and version-bump-prompt from plugin.
+* Updated package to use prepare-release-action.
+* Updated documentation to reflect new release process.
 
 ## v0.8.0 - [May 10, 2023](https://github.com/lando/nginx/releases/tag/v0.8.0)
 
