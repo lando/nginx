@@ -9,12 +9,13 @@ module.exports = {
   name: 'nginx',
   config: {
     version: '1.17',
-    supported: ['1.14', '1.16', '1.17', '1.18', '1.19', '1.20', '1.21', '1.22', '1.23', '1.24'],
+    supported: ['1.14', '1.16', '1.17', '1.18', '1.19', '1.20', '1.21', '1.22', '1.23', '1.24', '1.25'],
     legacy: ['1.14'],
     pinPairs: {
-      '1.24': 'bitnami/nginx:1.24.0-debian-11-r1',
-      '1.23': 'bitnami/nginx:1.23.4-debian-11-r10',
-      '1.22': 'bitnami/nginx:1.22.1-debian-11-r64',
+      '1.25': 'bitnami/nginx:1.25.3-debian-11-r1',
+      '1.24': 'bitnami/nginx:1.24.0-debian-11-r153',
+      '1.23': 'bitnami/nginx:1.23.4-debian-11-r24',
+      '1.22': 'bitnami/nginx:1.22.1-debian-11-r66',
       '1.21': 'bitnami/nginx:1.21.6-debian-11-r21',
       '1.20': 'bitnami/nginx:1.20.2-debian-11-r9',
       '1.19': 'bitnami/nginx:1.19.10-debian-10-r94',
@@ -42,7 +43,7 @@ module.exports = {
     },
     ssl: false,
     webroot: '.',
-    renderTemplate: '1.0.5-5',
+    renderTemplate: '1.0.6-5',
   },
   parent: '_webserver',
   builder: (parent, config) => class LandoNginx extends parent {
