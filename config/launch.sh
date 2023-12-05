@@ -7,7 +7,6 @@ set -e
 : ${VHOST:="$1"}
 : ${SERVER:="$2"}
 : ${PARAMS:="$3"}
-: ${RENDER_TEMPLATE:="$4"}
 : ${VHOST_SOURCE:="/tmp/vhosts.conf.lando"}
 : ${SERVER_SOURCE:="/tmp/server.conf.lando"}
 : ${PARAMS_SOURCE:="/tmp/fastcgi_params.lando"}
@@ -35,18 +34,10 @@ if [ -f "$PARAMS_SOURCE" ]; then
   cp -f "$PARAMS_SOURCE" "$PARAMS"
 fi
 
-# Unpack components
-if [ -f "/opt/bitnami/scripts/libcomponent.sh" ] && ! command -v render-template &> /dev/null; then
-  . /opt/bitnami/scripts/libcomponent.sh && component_unpack "render-template" "$RENDER_TEMPLATE"
-fi
+# Replace LANDO_WEBROOT in the vhost template
+lando_info "Using sed to place correct webroot in vhost template"
+sed 's@{{LANDO_WEBROOT}}@'"${LANDO_WEBROOT}"'@g' "$VHOST_SOURCE" > /opt/bitnami/nginx/conf/vhosts/lando.conf
 
-# Render the template if render-template exists
-if [ -x "$(command -v render-template)" ]; then
-  render-template "$VHOST_SOURCE" > /opt/bitnami/nginx/conf/vhosts/lando.conf
-else
-  lando_info "Command render-template not found, using sed"
-  sed 's@{{LANDO_WEBROOT}}@'"${LANDO_WEBROOT}"'@g' "$VHOST_SOURCE" > /opt/bitnami/nginx/conf/vhosts/lando.conf
-fi
 lando_info "Rendered template /tmp/vhosts.lando to /opt/bitnami/nginx/conf/vhosts/lando.conf"
 lando_debug $(cat /opt/bitnami/nginx/conf/vhosts/lando.conf)
 

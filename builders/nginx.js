@@ -43,7 +43,6 @@ module.exports = {
     },
     ssl: false,
     webroot: '.',
-    renderTemplate: '1.0.6-5',
   },
   parent: '_webserver',
   builder: (parent, config) => class LandoNginx extends parent {
@@ -65,11 +64,6 @@ module.exports = {
         options.defaultFiles = _.merge({}, options.defaultFiles, {server: 'nginx.conf.tpl'});
       }
 
-      // swap to older render template as needed
-      if (mv === '1.14' || mv === '1.15' || mv === '1.16') {
-        options.renderTemplate = '1.0.0-3';
-      }
-
       // Get the config files final destination
       // @TODO: we cp the files instead of directly mounting them to
       // prevent unexpected edits to this files
@@ -79,7 +73,7 @@ module.exports = {
       // Build the default stuff here
       const nginx = {
         image: `bitnami/nginx:${options.version}`,
-        command: `/launch.sh ${vhosts} ${server} ${params} ${options.renderTemplate}`,
+        command: `/launch.sh ${vhosts} ${server} ${params}`,
         environment: {
           NGINX_HTTP_PORT_NUMBER: '80',
           NGINX_DAEMON_USER: 'root',
