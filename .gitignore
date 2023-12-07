@@ -40,3 +40,4 @@ _site
 docs/.vuepress/.cache
 docs/.vuepress/.temp
 docs/.vuepress/distyarn.lock
+yarn.lock

@@ -1,6 +1,9 @@
 ## v1.0.0 - [December 7, 2023](https://github.com/lando/ngin/releases/tag/v1.0.0)
     * Dialed fully for `lando update`
 
+## v1.0.0 - [December 7, 2023](https://github.com/lando/ngin/releases/tag/v1.0.0)
+    * Dialed fully for `lando update`
+
 ## v0.11.0 - [December 5, 2023](https://github.com/lando/nginx/releases/tag/v0.11.0)
 
   * Got rid of render-template tooling. [#33](https://github.com/lando/nginx/pull/33)
