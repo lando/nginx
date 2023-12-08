@@ -28,7 +28,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org
           cache: npm
-      - name: Install NPM dependencies
+      - name: Install dependencies
         run: npm clean-install --prefer-offline --frozen-lockfile
 
       # Let's do tests rq just to make sure we dont push something that is fundamentally broken
