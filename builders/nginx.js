@@ -41,6 +41,7 @@ module.exports = {
       server: '/tmp/server.conf.lando',
       vhosts: '/tmp/vhosts.conf.lando',
     },
+    renderTemplate: '1.0.6',
     ssl: false,
     webroot: '.',
   },
@@ -48,7 +49,8 @@ module.exports = {
   builder: (parent, config) => class LandoNginx extends parent {
     constructor(id, options = {}) {
       options = _.merge({}, config, options);
-
+      // Are we strapped?
+      const isArmed = _.get(options, '_app._config.isArmed', false);
       // compute the minor version
       const mv = _(options.version.split('.')).thru(versions => [versions[0], versions[1]].join('.')).value();
 
@@ -63,6 +65,14 @@ module.exports = {
         });
         options.defaultFiles = _.merge({}, options.defaultFiles, {server: 'nginx.conf.tpl'});
       }
+
+      // attempt to install the render-template
+      require('../utils/add-build-step')(
+        [`/helpers/install-render-template.sh ${options.renderTemplate} ${isArmed ? 'arm64' : 'amd64'}`],
+        options._app,
+        options.name,
+        'build_as_root_internal',
+      );
 
       // Get the config files final destination
       // @TODO: we cp the files instead of directly mounting them to
