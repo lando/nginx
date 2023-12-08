@@ -60,14 +60,14 @@ However if you would like to manually install the plugin, update it to the bleed
 :::: code-group
 ::: code-group-item LANDO 3.21+
 ```bash:no-line-numbers
-lando plugin-add @lando/apache
+lando plugin-add @lando/nginx
 ```
 :::
 ::: code-group-item HYPERDRIVE
 ```bash:no-line-numbers
 # @TODO
 # @NOTE: This doesn't actaully work yet
-hyperdrive install @lando/apache
+hyperdrive install @lando/nginx
 ```
 :::
 ::: code-group-item DOCKER
@@ -78,7 +78,7 @@ mkdir -p ~/.lando/plugins
 # Install plugin
 # NOTE: Modify the "npm install @lando/nginx" line to install a particular version eg
 # npm install @lando/nginx@0.5.2
-docker run --rm -it -v ${HOME}/.lando/plugins:/plugins -w /tmp node:16-alpine sh -c \
+docker run --rm -it -v ${HOME}/.lando/plugins:/plugins -w /tmp node:18-alpine sh -c \
   "npm init -y \
   && npm install @lando/nginx --production --flat --no-default-rc --no-lockfile --link-duplicates \
   && npm install --production --cwd /tmp/node_modules/@lando/nginx \
