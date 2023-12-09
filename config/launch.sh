@@ -35,8 +35,14 @@ if [ -f "$PARAMS_SOURCE" ]; then
 fi
 
 # Replace LANDO_WEBROOT in the vhost template
-lando_info "Using sed to place correct webroot in vhost template"
-sed 's@{{LANDO_WEBROOT}}@'"${LANDO_WEBROOT}"'@g' "$VHOST_SOURCE" > /opt/bitnami/nginx/conf/vhosts/lando.conf
+# Render the template if render-template exists
+if [ -x "$(command -v render-template)" ]; then
+  render-template "$VHOST_SOURCE" > /opt/bitnami/nginx/conf/vhosts/lando.conf
+else
+  lando_warn "Command render-template not found, using sed fallback"
+  lando_warn "If your template replaced more than LANDO_WEBROOT this is probably going to be an issue"
+  sed 's@{{LANDO_WEBROOT}}@'"${LANDO_WEBROOT}"'@g' "$VHOST_SOURCE" > /opt/bitnami/nginx/conf/vhosts/lando.conf
+fi
 
 lando_info "Rendered template /tmp/vhosts.lando to /opt/bitnami/nginx/conf/vhosts/lando.conf"
 lando_debug $(cat /opt/bitnami/nginx/conf/vhosts/lando.conf)
