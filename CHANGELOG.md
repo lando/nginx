@@ -2,7 +2,7 @@
 
 * Changed default version to `1.25`
 * Dialed fully for `lando update`
-* Redadded `render-template` tooling as possible
+* Re-added `render-template` tooling as possible
 * Removed support for `nginx:1.14`
 
 ## v0.11.0 - [December 5, 2023](https://github.com/lando/nginx/releases/tag/v0.11.0)
