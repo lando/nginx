@@ -4,6 +4,8 @@ services:
     type: nginx:1.25
     ssl: true
     webroot: www
+    build_as_root:
+      - apt-get update && apt-get install -y curl
     config:
       server: config/server2.conf
       vhosts: config/custom.conf
