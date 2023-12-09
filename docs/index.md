@@ -18,6 +18,7 @@ services:
 
 ## Supported versions
 
+*   **[1.25](https://hub.docker.com/r/bitnami/nginx)** **(default)**
 *   [1.24](https://hub.docker.com/r/bitnami/nginx)
 *   [1.23](https://hub.docker.com/r/bitnami/nginx)
 *   [1.22](https://hub.docker.com/r/bitnami/nginx)
@@ -25,15 +26,9 @@ services:
 *   [1.20](https://hub.docker.com/r/bitnami/nginx)
 *   [1.19](https://hub.docker.com/r/bitnami/nginx)
 *   [1.18](https://hub.docker.com/r/bitnami/nginx)
-*   **[1.17](https://hub.docker.com/r/bitnami/nginx)** **(default)**
+*   [1.17](https://hub.docker.com/r/bitnami/nginx)
 *   [1.16](https://hub.docker.com/r/bitnami/nginx)
 *   [custom](https://docs.lando.dev/config/services.html#advanced)
-
-## Legacy versions
-
-You can still run these versions with Lando but for all intents and purposes they should be considered deprecated (e.g. YMMV and do not expect a ton of support if you have an issue).
-
-*   [1.14](https://hub.docker.com/r/bitnami/nginx)
 
 ## Patch versions
 

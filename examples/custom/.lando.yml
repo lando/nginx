@@ -1,19 +1,19 @@
 name: lando-nginx-custom
 services:
   custom:
-    type: nginx:1.17
+    type: nginx:1.25
     ssl: true
     webroot: www
     config:
       server: config/server2.conf
       vhosts: config/custom.conf
       params: config/params
-  custom_legacy:
-    type: nginx:1.14
+  custom_116:
+    type: nginx:1.16
     ssl: true
     webroot: www
     config:
-      server: config/server.conf
+      server: config/server2.conf
       vhosts: config/custom.conf
       params: config/params
 

@@ -1,10 +1,13 @@
 ## v1.0.0 - [December 7, 2023](https://github.com/lando/ngin/releases/tag/v1.0.0)
 
+* Changed default version to `1.25`
 * Dialed fully for `lando update`
+* Redadded `render-template` tooling as possible
+* Removed support for `nginx:1.14`
 
 ## v0.11.0 - [December 5, 2023](https://github.com/lando/nginx/releases/tag/v0.11.0)
 
-* Got rid of render-template tooling. [#33](https://github.com/lando/nginx/pull/33)
+* Got rid of `render-template` tooling [#33](https://github.com/lando/nginx/pull/33)
 * Added support for `nginx:1.25`.
 
 ## v0.10.0 - [November 15, 2023](https://github.com/lando/nginx/releases/tag/v0.10.0)

@@ -8,9 +8,8 @@ const path = require('path');
 module.exports = {
   name: 'nginx',
   config: {
-    version: '1.17',
-    supported: ['1.14', '1.16', '1.17', '1.18', '1.19', '1.20', '1.21', '1.22', '1.23', '1.24', '1.25'],
-    legacy: ['1.14'],
+    version: '1.25',
+    supported: ['1.16', '1.17', '1.18', '1.19', '1.20', '1.21', '1.22', '1.23', '1.24', '1.25'],
     pinPairs: {
       '1.25': 'bitnami/nginx:1.25.3-debian-11-r1',
       '1.24': 'bitnami/nginx:1.24.0-debian-11-r153',
@@ -22,7 +21,6 @@ module.exports = {
       '1.18': 'bitnami/nginx:1.18.0-debian-10-r363',
       '1.17': 'bitnami/nginx:1.17.10-debian-10-r71',
       '1.16': 'bitnami/nginx:1.16.1-debian-10-r106',
-      '1.14': 'bitnami/nginx:1.14.2-r125',
     },
     patchesSupported: true,
     confSrc: path.resolve(__dirname, '..', 'config'),
@@ -41,6 +39,7 @@ module.exports = {
       server: '/tmp/server.conf.lando',
       vhosts: '/tmp/vhosts.conf.lando',
     },
+    renderArch: 'amd64',
     renderTemplate: '1.0.6',
     ssl: false,
     webroot: '.',
@@ -50,25 +49,13 @@ module.exports = {
     constructor(id, options = {}) {
       options = _.merge({}, config, options);
       // Are we strapped?
-      const isArmed = _.get(options, '_app._config.isArmed', false);
-      // compute the minor version
-      const mv = _(options.version.split('.')).thru(versions => [versions[0], versions[1]].join('.')).value();
-
+      if (_.get(options, '_app._config.isArmed', false)) options.renderArch = 'arm64';
       // Use different default for ssl
       if (options.ssl) options.defaultFiles.vhosts = 'default-ssl.conf.tpl';
 
-      // If we are using the older 1.14 version we need different locations
-      if (mv === '1.14') {
-        options.finalFiles = _.merge({}, options.finalFiles, {
-          server: '/opt/bitnami/extra/nginx/templates/nginx.conf.tpl',
-          vhosts: '/opt/bitnami/extra/nginx/templates/default.conf.tpl',
-        });
-        options.defaultFiles = _.merge({}, options.defaultFiles, {server: 'nginx.conf.tpl'});
-      }
-
       // attempt to install the render-template
       require('../utils/add-build-step')(
-        [`/helpers/install-render-template.sh ${options.renderTemplate} ${isArmed ? 'arm64' : 'amd64'}`],
+        [`/helpers/install-render-template.sh ${options.renderTemplate} ${options.renderArch}`],
         options._app,
         options.name,
         'build_as_root_internal',
