@@ -5,9 +5,9 @@ description: Learn how to configure the Lando NGINX service.
 
 # Configuration
 
-Here are the configuration options, set to the default values, for this service. If you are unsure about where this goes or what this means we *highly recommend* scanning the [services documentation](https://docs.lando.dev/config/services.html) to get a good handle on how the magicks work.
+Here are the configuration options, set to the default values, for this service. If you are unsure about where this goes or what this means we *highly recommend* scanning the [services documentation](https://docs.lando.dev/core/v3/lando-service.html) to get a good handle on how the magicks work.
 
-Also note that options, in addition to the [build steps](https://docs.lando.dev/config/services.html#build-steps) and [overrides](https://docs.lando.dev/config/services.html#overrides) that are available to every service, are shown below:
+Also note that options, in addition to the [build steps](https://docs.lando.dev/core/v3/lando-service.html#build-steps) and [overrides](https://docs.lando.dev/core/v3/lando-service.html#overrides) that are available to every service, are shown below:
 
 ```yaml
 services:
@@ -23,7 +23,7 @@ services:
 
 ## Using custom nginx config files
 
-You may need to override our [default nginx config](https://github.com/lando/nginx/tree/main/services/nginx) with your own custom [server](https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/), [vhosts](https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/) or [fastcgi_params](https://www.nginx.com/resources/wiki/start/topics/examples/full/) config.
+You may need to override our [default nginx config](https://github.com/lando/nginx/tree/main/builders) with your own custom [server](https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/), [vhosts](https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/) or [fastcgi_params](https://www.nginx.com/resources/wiki/start/topics/examples/full/) config.
 
 If you do this, you must use files that exist inside your application and express them relative to your project root as shown below:
 
