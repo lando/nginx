@@ -1,3 +1,6 @@
+## v1.1.0 - [March 8, 2024](https://github.com/lando/nginx/releases/tag/v1.1.0)
+  * Updated to latest database services.
+
 ## v1.0.0 - [December 7, 2023](https://github.com/lando/ngin/releases/tag/v1.0.0)
 
 * Changed default version to `1.25`
