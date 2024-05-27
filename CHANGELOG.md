@@ -1,3 +1,8 @@
+## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
+
+* Added support for `nginx:1.26`.
+* Changed default version to `1.26`
+
 ## v1.1.0 - [March 8, 2024](https://github.com/lando/nginx/releases/tag/v1.1.0)
   * Updated to latest database services.
 
