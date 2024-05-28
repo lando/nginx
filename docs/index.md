@@ -8,7 +8,7 @@ next: ./config.html
 
 [NGINX](https://www.nginx.com/resources/wiki/) is a very common web server and reverse proxy.
 
-You can easily add it to your Lando app by adding an entry to the [services](https://docs.lando.dev/core/v3/lando-service.html) top-level config in your [Landofile](https://docs.lando.dev/core/v3).
+You can easily add it to your Lando app by adding an entry to the [services](https://docs.lando.dev/core/v3/services/lando.html) top-level config in your [Landofile](https://docs.lando.dev/core/v3).
 
 ```yaml
 services:
@@ -28,7 +28,7 @@ services:
 *   [1.18](https://hub.docker.com/r/bitnami/nginx)
 *   [1.17](https://hub.docker.com/r/bitnami/nginx)
 *   [1.16](https://hub.docker.com/r/bitnami/nginx)
-*   [custom](https://docs.lando.dev/core/v3/lando-service.html#overrides)
+*   [custom](https://docs.lando.dev/core/v3/services/lando.html#overrides)
 
 ## Patch versions
 
