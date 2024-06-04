@@ -18,7 +18,8 @@ services:
 
 ## Supported versions
 
-*   **[1.25](https://hub.docker.com/r/bitnami/nginx)** **(default)**
+*   **[1.26](https://hub.docker.com/r/bitnami/nginx)** **(default)**
+*   [1.25](https://hub.docker.com/r/bitnami/nginx)
 *   [1.24](https://hub.docker.com/r/bitnami/nginx)
 *   [1.23](https://hub.docker.com/r/bitnami/nginx)
 *   [1.22](https://hub.docker.com/r/bitnami/nginx)
