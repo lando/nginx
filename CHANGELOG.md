@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.2.0 - [June 11, 2024](https://github.com/lando/nginx/releases/tag/v1.2.0)
+
 * Added support for `nginx:1.26`.
 * Changed default version to `1.26`
 
