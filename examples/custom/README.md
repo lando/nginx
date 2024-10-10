@@ -23,12 +23,12 @@ Run the following commands to validate things are rolling as they should.
 
 ```bash
 # Should serve from webroot if specified
-lando ssh -s custom -c "curl http://localhost" | grep WWWDIR
-lando ssh -s custom_116 -c "curl http://localhost | grep WWWDIR"
+lando ssh -s custom -c "curl -s http://localhost" | grep WWWDIR
+lando ssh -s custom_116 -c "curl -s http://localhost | grep WWWDIR"
 
 # Should serve from https when specified
-lando ssh -s custom -c "curl https://localhost | grep WWWDIR"
-lando ssh -s custom_116 -c "curl https://localhost | grep WWWDIR"
+lando ssh -s custom -c "curl -s https://localhost | grep WWWDIR"
+lando ssh -s custom_116 -c "curl -s https://localhost | grep WWWDIR"
 
 # Should mount custom config to the correct locations and render the correct vars
 lando ssh -s custom -c "cat /opt/bitnami/nginx/conf/nginx.conf" | grep LANDOSERVER
