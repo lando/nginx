@@ -29,7 +29,7 @@ lando ssh -s defaults -c "nginx -v 2>&1 | grep 1.27"
 lando ssh -s defaults -c "curl -s http://localhost | grep ROOTDIR"
 
 # Should only serve over http by default
-lando ssh -s defaults -c "curl -s https://localhost" || echo $? | grep 1
+lando ssh -s defaults -c "curl -s --write-out \"%{exitcode}\" https://localhost | grep 7"
 ```
 
 Destroy tests
