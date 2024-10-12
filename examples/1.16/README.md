@@ -32,7 +32,7 @@ lando ssh -s patch -c "nginx -v 2>&1 | grep 1.16.1"
 lando ssh -s defaults -c "curl http://localhost | grep ROOTDIR"
 
 # Should only serve over http by default
-lando ssh -s defaults -c "curl https://localhost" || echo $? | grep 1
+lando ssh -s defaults -c "curl https://localhost" || echo $? | grep 7
 ```
 
 Destroy tests
