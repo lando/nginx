@@ -18,17 +18,18 @@ services:
 
 ## Supported versions
 
-*   **[1.26](https://hub.docker.com/r/bitnami/nginx)** **(default)**
-*   [1.25](https://hub.docker.com/r/bitnami/nginx)
-*   [1.24](https://hub.docker.com/r/bitnami/nginx)
-*   [1.23](https://hub.docker.com/r/bitnami/nginx)
-*   [1.22](https://hub.docker.com/r/bitnami/nginx)
-*   [1.21](https://hub.docker.com/r/bitnami/nginx)
-*   [1.20](https://hub.docker.com/r/bitnami/nginx)
-*   [1.19](https://hub.docker.com/r/bitnami/nginx)
-*   [1.18](https://hub.docker.com/r/bitnami/nginx)
-*   [1.17](https://hub.docker.com/r/bitnami/nginx)
-*   [1.16](https://hub.docker.com/r/bitnami/nginx)
+*   **[1.27](https://hub.docker.com/r/bitnami/nginx/tags?name=1.27)** **(default)**
+*   [1.26](https://hub.docker.com/r/bitnami/nginx/tags?name=1.26)
+*   [1.25](https://hub.docker.com/r/bitnami/nginx/tags?name=1.25)
+*   [1.24](https://hub.docker.com/r/bitnami/nginx/tags?name=1.24)
+*   [1.23](https://hub.docker.com/r/bitnami/nginx/tags?name=1.23)
+*   [1.22](https://hub.docker.com/r/bitnami/nginx/tags?name=1.22)
+*   [1.21](https://hub.docker.com/r/bitnami/nginx/tags?name=1.21)
+*   [1.20](https://hub.docker.com/r/bitnami/nginx/tags?name=1.20)
+*   [1.19](https://hub.docker.com/r/bitnami/nginx/tags?name=1.19)
+*   [1.18](https://hub.docker.com/r/bitnami/nginx/tags?name=1.18)
+*   [1.17](https://hub.docker.com/r/bitnami/nginx/tags?name=1.17)
+*   [1.16](https://hub.docker.com/r/bitnami/nginx/tags?name=1.16)
 *   [custom](https://docs.lando.dev/core/v3/services/lando.html#overrides)
 
 ## Patch versions
