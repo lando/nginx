@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+  * Updated lando/php to v1.4.0.
+
 ## v1.3.0 - [October 16, 2024](https://github.com/lando/nginx/releases/tag/v1.3.0)
 
 * Added nginx 1.27
