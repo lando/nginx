@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.4.4 - [December 7, 2024](https://github.com/lando/nginx/releases/tag/v1.4.4)
+
 * Optimized for `midcore`
 
 ## v1.4.3 - [December 6, 2024](https://github.com/lando/nginx/releases/tag/v1.4.3)

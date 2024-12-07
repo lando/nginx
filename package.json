@@ -1,7 +1,7 @@
 {
   "name": "@lando/nginx",
   "description": "A Lando plugin that provides a tight integration with NGINX.",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "author": "Mike Pirog @pirog",
   "license": "GPL-3.0",
   "repository": "lando/nginx",
