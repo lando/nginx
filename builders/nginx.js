@@ -91,6 +91,6 @@ module.exports = {
 
       // Send it downstream
       super(id, options, {services: _.set({}, options.name, nginx)});
-    };
+    }
   },
 };
