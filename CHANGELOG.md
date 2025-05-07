@@ -1,5 +1,10 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
+
+* Added nginx 1.28
+* Changed default version to `1.28`
+
 ## v1.4.4 - [December 7, 2024](https://github.com/lando/nginx/releases/tag/v1.4.4)
 
 * Optimized for `midcore`
