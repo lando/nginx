@@ -3,7 +3,7 @@
   "description": "A Lando plugin that provides a tight integration with NGINX.",
   "version": "1.4.4",
   "author": "Mike Pirog @pirog",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "repository": "lando/nginx",
   "bugs": "https://github.com/lando/nginx/issues/new/choose",
   "homepage": "https://github.com/lando/nginx",
