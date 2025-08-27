@@ -8,9 +8,10 @@ const path = require('path');
 module.exports = {
   name: 'nginx',
   config: {
-    version: '1.27',
-    supported: ['1.16', '1.17', '1.18', '1.19', '1.20', '1.21', '1.22', '1.23', '1.24', '1.25', '1.26', '1.27'],
+    version: '1.28',
+    supported: ['1.16', '1.17', '1.18', '1.19', '1.20', '1.21', '1.22', '1.23', '1.24', '1.25', '1.26', '1.27', '1.28'],
     pinPairs: {
+      '1.28': 'bitnami/nginx:1.28.0-debian-12-r0',
       '1.27': 'bitnami/nginx:1.27.2-debian-12-r0',
       '1.26': 'bitnami/nginx:1.26.2-debian-12-r6',
       '1.25': 'bitnami/nginx:1.25.5-debian-12-r7',
