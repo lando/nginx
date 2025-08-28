@@ -1,5 +1,9 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.5.0 - [August 28, 2025](htps://github.com/lando/nginx/releases/tag/v1.5.0)
+
+* Migrate images to bitnamilegacy repository
+
 ## v1.4.4 - [December 7, 2024](https://github.com/lando/nginx/releases/tag/v1.4.4)
 
 * Optimized for `midcore`
