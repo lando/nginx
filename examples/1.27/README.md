@@ -19,8 +19,8 @@ lando start
 Run the following commands to validate things are rolling as they should.
 
 ```bash
-# Should use 1.27.7 as the default version
-lando exec defaults -- nginx -v 2>&1 | grep 1.27.7
+# Should use 1.27.5 as the default version
+lando exec defaults -- nginx -v 2>&1 | grep 1.27.5
 
 # Should serve from the app root by default
 lando exec defaults -- curl -s http://localhost | grep ROOTDIR
