@@ -26,7 +26,7 @@ lando exec defaults -- nginx -v 2>&1 | grep 1.20.2
 lando exec defaults -- curl http://localhost | grep ROOTDIR
 
 # Should only serve over http by default
-lando exec defaults -- curl https://localhost" || echo $? | grep 7
+lando exec defaults -- curl https://localhost || echo $? | grep 7
 ```
 
 ## Destroy tests
