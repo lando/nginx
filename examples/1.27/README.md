@@ -1,12 +1,10 @@
-nginx Example
-=============
+# NGINX 1.27 Example
 
 This example exists primarily to test the following documentation:
 
-* [nginx Service](https://docs.devwithlando.io/tutorials/nginx.html)
+* [nginx Service](https://docs.lando.dev/plugins/nginx)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -16,24 +14,22 @@ lando poweroff
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
 ```bash
-# Should use 1.27.x as the default version
-lando ssh -s defaults -c "nginx -v 2>&1 | grep 1.27"
+# Should use 1.27.7 as the default version
+lando exec defaults -- nginx -v 2>&1 | grep 1.27.7
 
 # Should serve from the app root by default
-lando ssh -s defaults -c "curl -s http://localhost | grep ROOTDIR"
+lando exec defaults -- curl -s http://localhost | grep ROOTDIR
 
 # Should only serve over http by default
-lando ssh -s defaults -c "curl -s --write-out \"%{exitcode}\" https://localhost | grep 7"
+lando exec defaults -- curl -s --write-out \"%{exitcode}\" https://localhost | grep 7
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 

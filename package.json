@@ -14,7 +14,7 @@
     "nginx"
   ],
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "lando": {},
   "main": "index.js",

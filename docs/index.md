@@ -13,12 +13,15 @@ You can easily add it to your Lando app by adding an entry to the [services](htt
 ```yaml
 services:
   myservice:
-    type: nginx
+    type: nginx:1.29
 ```
 
 ## Supported versions
 
-*   **[1.27](https://hub.docker.com/r/bitnamilegacy/nginx/tags?name=1.27)** **(default)**
+*   [1](https://hub.docker.com/r/bitnamilegacy/nginx/tags?name=1.29)
+*   [1.29](https://hub.docker.com/r/bitnamilegacy/nginx/tags?name=1.29)
+*   [1.28](https://hub.docker.com/r/bitnamilegacy/nginx/tags?name=1.28)
+*   [1.27](https://hub.docker.com/r/bitnamilegacy/nginx/tags?name=1.27)
 *   [1.26](https://hub.docker.com/r/bitnamilegacy/nginx/tags?name=1.26)
 *   [1.25](https://hub.docker.com/r/bitnamilegacy/nginx/tags?name=1.25)
 *   [1.24](https://hub.docker.com/r/bitnamilegacy/nginx/tags?name=1.24)

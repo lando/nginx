@@ -8,8 +8,8 @@ const {name, version} = require('../../package.json');
 const landoPlugin = name.replace('@lando/', '');
 
 export default defineConfig({
-  title: 'Lando Nginx Plugin',
-  description: 'The offical Lando plugin for Nginx.',
+  title: 'Lando NGINX Plugin',
+  description: 'The offical Lando plugin for NGINX.',
   landoDocs: 3,
   landoPlugin,
   version,

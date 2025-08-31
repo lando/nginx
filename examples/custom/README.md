@@ -1,12 +1,10 @@
-nginx Example
-=============
+# NGINX Custom Example
 
 This example exists primarily to test the following documentation:
 
-* [nginx Service](https://docs.devwithlando.io/tutorials/nginx.html)
+* [nginx Service](https://docs.lando.dev/plugins/nginx)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -16,8 +14,7 @@ lando poweroff
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
@@ -39,8 +36,7 @@ lando ssh -s custom_116 -c "cat /opt/bitnami/nginx/conf/vhosts/lando.conf" | gre
 lando ssh -s custom_116 -c "cat /opt/bitnami/nginx/conf/fastcgi_params" | grep LANDOPARAMS
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 

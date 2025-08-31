@@ -1,7 +1,7 @@
 name: lando-nginx-custom
 services:
   custom:
-    type: nginx:1.27
+    type: nginx:1.29
     ssl: true
     webroot: www
     build_as_root:
