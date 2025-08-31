@@ -1,6 +1,6 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
-* Switched images to [bitnamilegacy](https://github.com/bitnami/containers/issues/83267) namespace [#40](https://github.com/lando/memcached/issues/40)
+* Switched images to [bitnamilegacy](https://github.com/bitnami/containers/issues/83267) namespace
 * Added `nginx:1.29`
 * Added `nginx:1.28`
 * Updated `nginx:1.27` to `1.27.5`

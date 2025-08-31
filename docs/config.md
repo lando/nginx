@@ -48,7 +48,7 @@ Note that you can put your configuration files anywhere inside your application 
 ```yaml
 services:
   myservice:
-    type: nginx
+    type: nginx:1.29
     config:
       server: config/nginx.conf
       vhosts: config/default.conf

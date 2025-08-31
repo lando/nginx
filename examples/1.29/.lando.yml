@@ -1,7 +1,7 @@
-name: lando-nginx-128
+name: lando-nginx-129
 services:
   defaults:
-    type: nginx:1.28
+    type: nginx:1.29
     build_as_root:
       - apt-get update && apt-get install -y curl
 
