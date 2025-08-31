@@ -1,4 +1,4 @@
-# NGINX 1.17 Example
+# NGINX 1.29 Example
 
 This example exists primarily to test the following documentation:
 
@@ -19,17 +19,14 @@ lando start
 Run the following commands to validate things are rolling as they should.
 
 ```bash
-# Should use 1.17.10 as the default version
-lando exec defaults -- nginx -v 2>&1 | grep 1.17.10
-
-# Should use the user specified patch version if given
-lando exec patch -- nginx -v 2>&1 | grep 1.17.10
+# Should use 1.29.1 as the default version
+lando exec defaults -- nginx -v 2>&1 | grep 1.29.1
 
 # Should serve from the app root by default
-lando exec defaults -- curl http://localhost | grep ROOTDIR
+lando exec defaults -- curl -s http://localhost | grep ROOTDIR
 
 # Should only serve over http by default
-lando exec defaults -- curl https://localhost || echo $? | grep 7
+lando exec defaults -- curl -s --write-out \"%{exitcode}\" https://localhost | grep 7
 ```
 
 ## Destroy tests

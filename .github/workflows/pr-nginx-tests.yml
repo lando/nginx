@@ -17,20 +17,22 @@ jobs:
         os:
           - ubuntu-24.04
         node-version:
-          - '16'
+          - '20'
         leia-test:
-          - examples/1.16
-          - examples/1.17
-          - examples/1.18
-          - examples/1.19
-          - examples/1.20
-          - examples/1.21
-          - examples/1.22
-          - examples/1.23
-          - examples/1.24
-          - examples/1.25
-          - examples/1.26
+          - examples/1.29
+          - examples/1.28
           - examples/1.27
+          - examples/1.26
+          - examples/1.25
+          - examples/1.24
+          - examples/1.23
+          - examples/1.22
+          - examples/1.21
+          - examples/1.20
+          - examples/1.19
+          - examples/1.18
+          - examples/1.17
+          - examples/1.16
           - examples/custom
 
     steps:

@@ -1,8 +1,9 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
-## v1.5.0 - [August 28, 2025](htps://github.com/lando/nginx/releases/tag/v1.5.0)
-
-* Migrate images to bitnamilegacy repository
+* Switched images to [bitnamilegacy](https://github.com/bitnami/containers/issues/83267) namespace [#40](https://github.com/lando/memcached/issues/40)
+* Added `nginx:1.29`
+* Added `nginx:1.28`
+* Updated `nginx:1.27` to `1.27.5`
 
 ## v1.4.4 - [December 7, 2024](https://github.com/lando/nginx/releases/tag/v1.4.4)
 
@@ -36,7 +37,8 @@
 * Changed default version to `1.26`
 
 ## v1.1.0 - [March 8, 2024](https://github.com/lando/nginx/releases/tag/v1.1.0)
-  * Updated to latest database services.
+
+* Updated to latest database services.
 
 ## v1.0.0 - [December 7, 2023](https://github.com/lando/ngin/releases/tag/v1.0.0)
 
