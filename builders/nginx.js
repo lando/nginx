@@ -94,8 +94,8 @@ module.exports = {
         command: `/launch.sh ${vhosts} ${server} ${params}`,
         environment: {
           NGINX_HTTP_PORT_NUMBER: '80',
-          NGINX_DAEMON_USER: 'www-data',
-          NGINX_DAEMON_GROUP: 'www-data',
+          NGINX_DAEMON_USER: 'root',
+          NGINX_DAEMON_GROUP: 'root',
           LANDO_NEEDS_EXEC: 'DOEEET',
         },
         ports: ['80'],
