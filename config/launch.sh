@@ -47,6 +47,15 @@ fi
 lando_info "Rendered template /tmp/vhosts.lando to /opt/bitnami/nginx/conf/vhosts/lando.conf"
 lando_debug $(cat /opt/bitnami/nginx/conf/vhosts/lando.conf)
 
+# Set nginx worker user to www-data so it can serve files created by PHP
+# Bitnami's nginx-env.sh hardcodes NGINX_DAEMON_USER=daemon which overwrites
+# any env var we set, so we patch it before the entrypoint runs
+# See: https://github.com/lando/drupal/issues/124
+if [ -f "/opt/bitnami/scripts/nginx-env.sh" ]; then
+  sed -i 's/export NGINX_DAEMON_USER="daemon"/export NGINX_DAEMON_USER="www-data"/' /opt/bitnami/scripts/nginx-env.sh
+  sed -i 's/export NGINX_DAEMON_GROUP="daemon"/export NGINX_DAEMON_GROUP="www-data"/' /opt/bitnami/scripts/nginx-env.sh
+fi
+
 # Detect and run the correct entrypoint script. THANKS BITNAMI!
 if [ -f "/opt/bitnami/scripts/nginx/entrypoint.sh" ]; then
   /opt/bitnami/scripts/nginx/entrypoint.sh /opt/bitnami/scripts/nginx/run.sh
