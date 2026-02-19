@@ -27,6 +27,12 @@ lando exec defaults -- curl -s http://localhost | grep ROOTDIR
 
 # Should only serve over http by default
 lando exec defaults -- curl -s --write-out "%{exitcode}" https://localhost || echo $? | grep 7
+
+# Should have nginx worker processes running as www-data
+lando exec defaults -- ps aux | grep "nginx: worker" | grep -v grep | grep www-data
+
+# Should serve files owned by www-data with restrictive permissions without 403
+lando exec defaults -- curl -s -o /dev/null -w "%{http_code}" http://localhost/wwwdata-test/index.html | grep 200
 ```
 
 ## Destroy tests

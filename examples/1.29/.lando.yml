@@ -3,7 +3,10 @@ services:
   defaults:
     type: nginx:1.29
     build_as_root:
-      - apt-get update && apt-get install -y curl
+      - apt-get update && apt-get install -y curl procps
+      - mkdir -p /app/wwwdata-test && echo "hello" > /app/wwwdata-test/index.html
+      - chown -R www-data:www-data /app/wwwdata-test
+      - chmod 750 /app/wwwdata-test && chmod 640 /app/wwwdata-test/index.html
 
 # This is important because it lets lando know to test against the plugin in this repo
 # DO NOT REMOVE THIS!
