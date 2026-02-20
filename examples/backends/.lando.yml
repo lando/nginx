@@ -1,0 +1,27 @@
+name: lando-nginx-backends
+services:
+  frontend:
+    type: nginx:1.29
+    webroot: .
+    backends:
+      - backend1
+      - backend2
+    build_as_root:
+      - apt-get update && apt-get install -y curl
+    config:
+      vhosts: config/proxy.conf
+  backend1:
+    type: nginx:1.29
+    webroot: backend1
+    build_as_root:
+      - apt-get update && apt-get install -y curl
+  backend2:
+    type: nginx:1.29
+    webroot: backend2
+    build_as_root:
+      - apt-get update && apt-get install -y curl
+
+# This is important because it lets lando know to test against the plugin in this repo
+# DO NOT REMOVE THIS!
+plugins:
+  "@lando/nginx": ../..
