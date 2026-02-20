@@ -28,11 +28,9 @@ lando ssh -s frontend -c "curl -s http://localhost/backend1/" | grep BACKEND1
 # Should be able to reach backend2 through the frontend proxy
 lando ssh -s frontend -c "curl -s http://localhost/backend2/" | grep BACKEND2
 
-# Should have backend1 as a dependency of frontend
-lando info -s frontend --format json | grep backend1
-
-# Should have backend2 as a dependency of frontend
-lando info -s frontend --format json | grep backend2
+# Should have LANDO_NGINX_BACKENDS env var set on frontend
+lando ssh -s frontend -c "env" | grep LANDO_NGINX_BACKENDS | grep backend1
+lando ssh -s frontend -c "env" | grep LANDO_NGINX_BACKENDS | grep backend2
 
 # Should serve backend1 directly on its own port
 lando ssh -s backend1 -c "curl -s http://localhost" | grep BACKEND1
