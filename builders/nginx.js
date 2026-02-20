@@ -26,6 +26,7 @@ module.exports = {
       '1.17',
       '1.16',
     ],
+    backends: [],
     pinPairs: {
       '1': 'bitnamilegacy/nginx:1.29.1-debian-12-r0',
       '1.29': 'bitnamilegacy/nginx:1.29.1-debian-12-r0',
@@ -107,6 +108,11 @@ module.exports = {
           `${options.confDest}/${options.defaultFiles.server}:${options.remoteFiles.server}:ro`,
         ],
       };
+
+      // Add backend dependencies if specified
+      if (options.backends && options.backends.length > 0) {
+        nginx.depends_on = options.backends;
+      }
 
       // Send it downstream
       super(id, options, {services: _.set({}, options.name, nginx)});
