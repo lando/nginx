@@ -34,7 +34,6 @@ jobs:
           - examples/1.17
           - examples/1.16
           - examples/custom
-          - examples/backends
 
     steps:
       - name: Checkout code

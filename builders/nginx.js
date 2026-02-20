@@ -62,7 +62,6 @@ module.exports = {
     },
     renderArch: 'amd64',
     renderTemplate: '1.0.6',
-    backends: [],
     ssl: false,
     webroot: '.',
   },
@@ -108,17 +107,6 @@ module.exports = {
           `${options.confDest}/${options.defaultFiles.server}:${options.remoteFiles.server}:ro`,
         ],
       };
-
-      // Add depends_on for any configured backends
-      const backends = _.isArray(options.backends) ? options.backends : [];
-      if (!_.isEmpty(backends)) {
-        nginx.depends_on = {};
-        backends.forEach(backend => {
-          nginx.depends_on[backend] = {condition: 'service_started'};
-        });
-        // Also inject backend names as env var for use in templates
-        nginx.environment.LANDO_NGINX_BACKENDS = backends.join(',');
-      }
 
       // Send it downstream
       super(id, options, {services: _.set({}, options.name, nginx)});
