@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.6.0 - [February 23, 2026](https://github.com/lando/nginx/releases/tag/v1.6.0)
+
 ## v1.5.0 - [August 31, 2025](https://github.com/lando/nginx/releases/tag/v1.5.0)
 
 * Switched images to [bitnamilegacy](https://github.com/bitnami/containers/issues/83267) namespace
